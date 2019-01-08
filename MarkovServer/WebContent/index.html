@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Markov Server</title>
+		<style type="text/css">
+			fieldset {
+				display: inline-block; /* make fieldset width as much as it's contents */
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		<!-- inline fieldset is wrapped by divs to place them on seperate lines  -->
+			<fieldset>
+				<legend>Signup</legend>
+				<form action="SignupController" method="post" id="signup-form">
+					<input type="text" placeholder="email" name="email">
+					<input type="password" placeholder="password" name="password">
+					<input type="submit" value="Signup">
+				</form>
+			</fieldset>
+		</div>
+		<div>
+			<fieldset>
+				<legend>Login</legend>
+				<form action="LoginController" method="post" id="login-form">
+					<input type="text" placeholder="email" name="email">
+					<input type="password" placeholder="password" name="password">
+					<input type="submit" value=" Login ">
+				</form>
+			</fieldset>
+		</div>
+	</body>
+<!-- 	<script type="text/javascript" src="js/index.js"></script> -->
+</html>
