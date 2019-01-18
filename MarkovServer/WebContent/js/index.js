@@ -1,7 +1,16 @@
-
 // this file is no longer used/required.
 
-document.addEventListener('DOMContentLoaded', setSubmitHandlers);
+var loginFormDOM, signupFormDOM;
+
+document.addEventListener('DOMContentLoaded', function() {
+	cacheDOMElements();
+	setSubmitHandlers();
+});
+
+function cacheDOMElements() {
+	loginFormDOM = document.getElementById('login-form');
+	signupFormDOM = document.getElementById('signup-form');
+}
 
 function setSubmitHandlers() {
 	document.getElementById('signup-form').addEventListener('submit', signup);
@@ -10,8 +19,8 @@ function setSubmitHandlers() {
 
 function login(event) {
 	event.preventDefault();
-	var email = event.target.children[0].value;
-	var password = event.target.children[1].value;
+	var email = loginFormDOM.value;
+	var password = loginFormDOM.value;
 	var data = new URLSearchParams();
 	data.append('email', email);
 	data.append('password', password);
@@ -22,24 +31,12 @@ function login(event) {
 
 function signup(event) {
 	event.preventDefault();
-	var email = event.target.children[0].value;
-	var password = event.target.children[1].value;
+	var email = signupFormDOM.value;
+	var password = signupFormDOM.value;
 	var data = new URLSearchParams();
 	data.append('email', email);
 	data.append('password', password);
 	ajaxPost("SignupController", data, function(response) {
 		alert(response);
 	});
-}
-
-function ajaxPost(target, data, callback) {
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onreadystatechange = function() {
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-			callback(xmlHttp.responseText);
-		}
-	}
-	xmlHttp.open("post", target, true);
-	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlHttp.send(data);
 }

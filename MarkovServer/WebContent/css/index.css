@@ -1,0 +1,29 @@
+nav {
+    background-color:rgb(176, 185, 192);
+}
+
+.container {
+    width: 30%;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: rgb(176, 200, 221);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.container form .row .col-12 {
+    margin-top: 10px;
+}
+
+form input[type="submit"] {
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        width: 100%;
+        margin-left: auto;
+        border-radius: 0;
+    }
+}

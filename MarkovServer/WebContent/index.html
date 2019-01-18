@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
 		<title>Markov Server</title>
-		<style type="text/css">
-			fieldset {
-				display: inline-block; /* make fieldset width as much as it's contents */
-			}
-		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
-		<div>
-		<!-- inline fieldset is wrapped by divs to place them on seperate lines  -->
-			<fieldset>
-				<legend>Signup</legend>
-				<form action="SignupController" method="post" id="signup-form">
-					<input type="text" placeholder="email" name="email">
-					<input type="password" placeholder="password" name="password">
-					<input type="submit" value="Signup">
-				</form>
-			</fieldset>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#">KSSM Server</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Pricing</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<form id="login-form" action="LoginController" method="post">
+				<div class="row">
+					<div class="col-12">
+						<input id="email-login" name="email" type="text" class="form-control" placeholder="Email">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<input id="password-login" name="password" type="password" class="form-control" placeholder="Password">
+					</div>
+				</div>
+				<input type="submit" class="btn btn-primary" value="Login">
+			</form>
 		</div>
-		<div>
-			<fieldset>
-				<legend>Login</legend>
-				<form action="LoginController" method="post" id="login-form">
-					<input type="text" placeholder="email" name="email">
-					<input type="password" placeholder="password" name="password">
-					<input type="submit" value=" Login ">
-				</form>
-			</fieldset>
+		<div class="container">
+			<form id="signup-form" action="SignupController" method="post">
+				<div class="row">
+					<div class="col-12">
+						<input id="email-signup" name="email" type="text" class="form-control" placeholder="Email">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<input id="password-signup" name="password" type="password" class="form-control" placeholder="Password">
+					</div>
+				</div>
+				<input type="submit" class="btn btn-primary" value="Signup">
+			</form>
 		</div>
 	</body>
-<!-- 	<script type="text/javascript" src="js/index.js"></script> -->
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- <script type="text/javascript" src="js/ajax.js"></script> -->
+	<!-- <script type="text/javascript" src="js/index.js"></script> -->
 </html>
